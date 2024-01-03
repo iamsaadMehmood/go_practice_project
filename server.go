@@ -5,9 +5,8 @@ import (
 	"net/http"
 )
 
-type TestWebServerType bool
 
-func (m TestWebServerType) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func  myFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `
 	<html>
 		<head>
@@ -23,6 +22,6 @@ func (m TestWebServerType) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 }
 func main() {
-	var k TestWebServerType
-	http.ListenAndServe("localhost:8080", k)
+	
+	http.ListenAndServe("localhost:8080", http.HandlerFunc(myFunc))
 }
