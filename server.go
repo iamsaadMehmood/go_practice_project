@@ -8,8 +8,18 @@ import (
 type TestWebServerType bool
 
 func (m TestWebServerType) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello there !!! \n")
-	fmt.Fprintf(w, "Request is: %+v", r)
+	fmt.Fprintf(w, `
+	<html>
+		<head>
+			Hye
+		</head>
+		<body>
+			<h1>Saad Mehmood</h1>
+			<a href="https://github.com/iamsaadMehmood">Github Link</a>
+		</body>
+
+
+	</html>`)
 
 }
 func main() {
