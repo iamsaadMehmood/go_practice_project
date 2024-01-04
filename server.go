@@ -5,23 +5,33 @@ import (
 	"net/http"
 )
 
-func myFunc(w http.ResponseWriter, r *http.Request) {
+func login(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `
 	<html>
 		<head>
 			Hye
 		</head>
 		<body>
-			<h1>Saad Mehmood</h1>
-			<a href="https://github.com/iamsaadMehmood">Github Link</a>
-			<a href="https://www.linkedin.com/in/iamsaadmehmood/">LinkedIn Link</a>
+			<h1>Login</h1>
 			
 		</body>
 	</html>`)
 
 }
 
-func main() {
+func welcome(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, `
+	<html>
+		<body>
+			<h1>Welcome</h1>
+			
+		</body>
+	</html>`)
 
-	http.ListenAndServe("localhost:8080", http.HandlerFunc(myFunc))
+}
+func main() {
+	http.HandleFunc("/login", login)
+	http.HandleFunc("/welcome", welcome)
+	fmt.Println("Listening to port 8080")
+	http.ListenAndServe("localhost:8080", nil)
 }
