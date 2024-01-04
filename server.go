@@ -5,8 +5,7 @@ import (
 	"net/http"
 )
 
-
-func  myFunc(w http.ResponseWriter, r *http.Request) {
+func myFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `
 	<html>
 		<head>
@@ -21,7 +20,8 @@ func  myFunc(w http.ResponseWriter, r *http.Request) {
 	</html>`)
 
 }
+
 func main() {
-	
+
 	http.ListenAndServe("localhost:8080", http.HandlerFunc(myFunc))
 }
