@@ -32,6 +32,8 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/welcome", welcome)
+	http.Handle("/loginHandle", http.HandlerFunc(login))
+	http.Handle("/welcomeHandle", http.HandlerFunc(welcome))
 	fmt.Println("Listening to port 8080")
 	http.ListenAndServe("localhost:8080", nil)
 }
