@@ -7,13 +7,13 @@ import (
 
 func login(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		//handle get
+		//handle get in go without echo
 	}
 	if r.Method == "POST" {
-		//handle post
+		//handle post in go without echo
 	}
 	if r.Method == "PUT" {
-		//handle put
+		//handle put in go without echo
 	}
 
 	fmt.Fprintf(w, `
