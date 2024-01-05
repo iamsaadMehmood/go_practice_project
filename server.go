@@ -6,6 +6,16 @@ import (
 )
 
 func login(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		//handle get
+	}
+	if r.Method == "POST" {
+		//handle post
+	}
+	if r.Method == "PUT" {
+		//handle put
+	}
+
 	fmt.Fprintf(w, `
 	<html>
 		<head>
